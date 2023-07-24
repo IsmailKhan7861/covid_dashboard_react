@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header";
 import styles from "./App.module.css";
 import { Fragment } from "react";
 import LeftContainer from "./components/Left/LeftContainer.jsx";
