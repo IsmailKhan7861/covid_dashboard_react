@@ -23,6 +23,14 @@
 #thead {
   font-size: 2rem;
 }
+.isLoading {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: #ec2222;
+  font-weight: bold;
+}
 .twitter-container {
   padding: 10px;
   border-bottom: 1px solid #808080;
