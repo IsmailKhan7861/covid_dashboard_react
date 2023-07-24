@@ -1,0 +1,5 @@
+#container {
+  display: flex;
+  background-color: #e3dfde;
+  gap: 10px;
+}

@@ -1,0 +1,25 @@
+#live-data {
+  display: flex;
+  font-size: 1.2rem;
+}
+/* container left liv data box */
+.box {
+  /* box-shadow: 0px 0px 6px 1px; */
+  padding: 30px 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  flex-basis: 24%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  background-color: #ffffff;
+}
+.cases {
+  display: flex;
+}
+.loader {
+  color: brown;
+  font-size: 2rem;
+  font-weight: bold;
+}
