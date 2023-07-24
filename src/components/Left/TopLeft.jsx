@@ -7,6 +7,7 @@ import totalActive from "../../assets/img3.png";
 import totalDeaths from "../../assets/img4.png";
 import { useEffect, useState } from "react";
 
+export let percentage;
 const TopLeft = () => {
   console.log("hello");
 
@@ -36,7 +37,7 @@ const TopLeft = () => {
   const totalRecoverdCount = countData.totalRecoveredNumber;
   const totalActiveCount = countData.totalActiveNumber;
   const totalDeathsCount = countData.totalDeathsNumber;
-
+  percentage = Math.floor((totalRecoverdCount / totalCasesCount) * 100) + "%";
   return (
     <div id={styles["live-data"]}>
       <div className={styles.box}>

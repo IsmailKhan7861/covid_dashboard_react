@@ -1,0 +1,47 @@
+#ratio {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(20, 37, 64, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+  width: 350px;
+  margin-bottom: 10px;
+}
+#ratio-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.outer-circle {
+  display: flex;
+  height: 270px;
+  width: 270px;
+  border-radius: 50%;
+
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #1bab50;
+  background-color: #d3dbd6;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: 20px solid #d3dbd6;
+}
+.circle #nan {
+  font-size: 3rem;
+  font-weight: 500;
+}
+#para {
+  color: #808080;
+  font-weight: 200;
+}
