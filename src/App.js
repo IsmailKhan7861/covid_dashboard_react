@@ -1,10 +1,11 @@
 import React from "react";
-import { ReactDOM } from "react";
+import Header from "./components/Header.jsx";
 
 const App = () => {
   return (
     <div>
       <h1>Hello</h1>
+      <Header />
     </div>
   );
 };

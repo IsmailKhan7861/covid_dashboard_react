@@ -1,0 +1,14 @@
+#navbar {
+  box-shadow: 0px 0px 10px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px;
+}
+
+#navbar #heading {
+  color: #ec2222;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
