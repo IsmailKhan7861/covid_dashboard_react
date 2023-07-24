@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 
 export let percentage;
 const TopLeft = () => {
-  console.log("hello");
-
   const [countData, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
 

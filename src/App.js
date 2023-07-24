@@ -6,7 +6,6 @@ import LeftContainer from "./components/Left/LeftContainer.jsx";
 import RightContainer from "./components/Right/RightContainer.jsx";
 
 const App = () => {
-  console.log("app");
   return (
     <Fragment>
       <Header></Header>

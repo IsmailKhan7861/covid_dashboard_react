@@ -4,7 +4,6 @@ import TopLeft from "./TopLeft";
 import MiddleLeft from "./MiddleLeft";
 import BottomLeft from "./BottomLeft";
 const LeftContainer = () => {
-  console.log("leftcontsiner");
   return (
     <div id={styles.left}>
       <TopLeft />

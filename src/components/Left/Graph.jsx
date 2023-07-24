@@ -1,5 +1,6 @@
 import styles from "./Graph.module.css";
 const Graph = () => {
+  //FETCH API AND DATA
   return (
     <div id={styles.trends}>
       <div id={styles["trends-header"]}>
