@@ -70,7 +70,7 @@
 #total-cases,
 #total-active,
 #total-recovered,
-s #total-deaths {
+#total-deaths {
   font-size: 1.4rem;
   margin-bottom: 4px;
   padding: 10px 2px 10px 2px;

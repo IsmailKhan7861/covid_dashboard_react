@@ -31,7 +31,7 @@
   margin: 0;
   padding: 0;
 }
-.newsContainer {
+.news-container {
   padding: 20px;
   background-color: #becacf;
   font-size: 1.2rem;
@@ -85,4 +85,16 @@
   right: 0;
   padding-left: 0.75rem;
   border-radius: 2rem 0 0 2rem;
+}
+
+.image {
+  height: 200px;
+  width: 350px;
+  border: 2px solid #808080;
+  display: flex;
+  justify-content: center;
+}
+.news-link {
+  font-size: 1.5rem;
+  width: 60%;
 }

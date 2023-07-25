@@ -41,7 +41,7 @@ const TopLeft = () => {
       <div className={styles.box}>
         <div>
           <div className={styles.cases}>
-            <p>Total Cases</p>
+            <p>Total Cases{percentage}</p>
             <img src={arrowDown} alt="arrow Down" />
           </div>
           {isLoading && <p className={styles.loader}>Loading...</p>}
