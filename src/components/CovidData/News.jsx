@@ -32,6 +32,7 @@ const News = () => {
       //     img: jsonData.articles[key].media,
       //   });
       // }
+
       loadedData = jsonData.articles.map((elem) => {
         return {
           ...elem,
@@ -43,9 +44,10 @@ const News = () => {
       });
       setNewsData(loadedData);
     }
-
     fetchData();
   }, []);
+
+  //For Button
   const nextButton = () => {
     const slideWidth = newsContainer.current.clientWidth;
     slideContainer.current.scrollLeft += slideWidth;
@@ -54,6 +56,7 @@ const News = () => {
     const slideWidth = newsContainer.current.clientWidth;
     slideContainer.current.scrollLeft -= slideWidth;
   };
+
   return (
     <div id={styles.news}>
       <h1 id={styles["news-header"]}>NEWS</h1>

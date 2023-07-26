@@ -28,14 +28,14 @@ const Twitter = () => {
       const jsonData = await data.json();
       setLoading(false);
 
-      for (let key in jsonData.results) {
-        loadedData.push({
-          username: jsonData.results[key].user.username,
-          text: jsonData.results[key].text,
-          likes: jsonData.results[key].favorite_count,
-          shares: jsonData.results[key].retweet_count,
-        });
-      }
+      // for (let key in jsonData.results) {
+      //   loadedData.push({
+      //     username: jsonData.results[key].user.username,
+      //     text: jsonData.results[key].text,
+      //     likes: jsonData.results[key].favorite_count,
+      //     shares: jsonData.results[key].retweet_count,
+      //   });
+      // }
       loadedData = jsonData.results.map((elem) => {
         return {
           ...elem,
@@ -66,7 +66,10 @@ const Twitter = () => {
       {isLoading && <p className={styles.isLoading}>Loading Data...</p>}
       {!isLoading &&
         twitterData.map((elem) => (
-          <div className={styles["twitter-container"]}>
+          <div
+            className={styles["twitter-container"]}
+            key={Math.random().toString()}
+          >
             <div className={styles.title}>
               <h3>{elem.username}</h3>
             </div>
