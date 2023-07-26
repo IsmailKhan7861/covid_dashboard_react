@@ -1,4 +1,4 @@
-import styles from "./TopLeft.module.css";
+import styles from "./WorldData.module.css";
 import arrowDown from "../../assets/arrow-red.png";
 import arrowUp from "../../assets/arrow-green.png";
 import totalCases from "../../assets/img1.png";
@@ -8,7 +8,8 @@ import totalDeaths from "../../assets/img4.png";
 import { useEffect, useState } from "react";
 
 export let percentage;
-const TopLeft = () => {
+
+const WorldData = () => {
   const [countData, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
@@ -19,12 +20,13 @@ const TopLeft = () => {
       let data = await fetch(url);
 
       let jsonData = await data.json();
+      console.log(jsonData);
       setLoading(false);
       setData({
-        totalCasesNumber: jsonData.cases,
-        totalRecoveredNumber: jsonData.recovered,
-        totalActiveNumber: jsonData.active,
-        totalDeathsNumber: jsonData.deaths,
+        totalCasesNumber: Object.values(jsonData)[1],
+        totalRecoveredNumber: Object.values(jsonData)[5],
+        totalActiveNumber: Object.values(jsonData)[7],
+        totalDeathsNumber: Object.values(jsonData)[3],
       });
     }
 
@@ -36,6 +38,7 @@ const TopLeft = () => {
   const totalActiveCount = countData.totalActiveNumber;
   const totalDeathsCount = countData.totalDeathsNumber;
   percentage = Math.floor((totalRecoverdCount / totalCasesCount) * 100) + "%";
+
   return (
     <div id={styles["live-data"]}>
       <div className={styles.box}>
@@ -89,4 +92,4 @@ const TopLeft = () => {
   );
 };
 
-export default TopLeft;
+export default WorldData;

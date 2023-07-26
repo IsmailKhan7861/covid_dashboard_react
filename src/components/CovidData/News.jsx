@@ -1,13 +1,14 @@
 import styles from "./News.module.css";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
+
+let loadedData = [];
 const News = () => {
   const [newsData, setNewsData] = useState([]);
   const slideContainer = useRef();
   const newsContainer = useRef();
 
   useEffect(() => {
-    let loadedData = [];
     async function fetchData() {
       const url =
         "https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=en&media=True";
@@ -23,14 +24,23 @@ const News = () => {
       const data = await fetch(url, options);
       const jsonData = await data.json();
 
-      for (const key in jsonData.articles) {
-        loadedData.push({
-          title: jsonData.articles[key].title,
-          summary: jsonData.articles[key].summary,
-          links: jsonData.articles[key].link,
-          img: jsonData.articles[key].media,
-        });
-      }
+      // for (const key in jsonData.articles) {
+      //   loadedData.push({
+      //     title: jsonData.articles[key].title,
+      //     summary: jsonData.articles[key].summary,
+      //     links: jsonData.articles[key].link,
+      //     img: jsonData.articles[key].media,
+      //   });
+      // }
+      loadedData = jsonData.articles.map((elem) => {
+        return {
+          ...elem,
+          title: elem.title,
+          summary: elem.summary,
+          links: elem.link,
+          img: elem.media,
+        };
+      });
       setNewsData(loadedData);
     }
 
@@ -50,14 +60,14 @@ const News = () => {
       <div id={styles.main}>
         <div id={styles["slides-container"]} ref={slideContainer}>
           <button
-            class={styles["slide-arrow"]}
+            className={styles["slide-arrow"]}
             id={styles["slide-arrow-prev"]}
             onClick={() => prevButton(newsContainer, slideContainer)}
           >
             &#8249;
           </button>
           <button
-            class={styles["slide-arrow"]}
+            className={styles["slide-arrow"]}
             id={styles["slide-arrow-next"]}
             onClick={() => nextButton(newsContainer, slideContainer)}
           >
@@ -67,27 +77,18 @@ const News = () => {
             <div
               className={`${styles.slides} ${styles["news-container"]}`}
               ref={newsContainer}
+              key={Math.random().toString()}
             >
               <h3 className={styles.headlines}>{elem.title}</h3>
-              <p className={styles.text}>{elem.summary}</p>
               <img className={styles.image} src={elem.img} />
-              <a href={elem.links} target="_blank">
-                {elem.links}
-              </a>
-              {/* <button
-                class={styles["slide-arrow"]}
-                id={styles["slide-arrow-prev"]}
-                onClick={() => prevButton(newsContainer, slideContainer)}
-              >
-                &#8249;
-              </button>
-              <button
-                class={styles["slide-arrow"]}
-                id={styles["slide-arrow-next"]}
-                onClick={() => nextButton(newsContainer, slideContainer)}
-              >
-                &#8250;
-              </button> */}
+              <p className={styles.text}>
+                {elem.summary.slice(0, 350)}
+                {
+                  <a href={elem.links} target="_blank" className={styles.link}>
+                    {elem.links}
+                  </a>
+                }
+              </p>
             </div>
           ))}
         </div>

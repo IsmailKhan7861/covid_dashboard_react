@@ -1,8 +1,8 @@
-import styles from "./BottomLeft.module.css";
+import styles from "./GraphNewsContainer.module.css";
 import Graph from "./Graph";
 import News from "./News";
 
-const BottomLeft = () => {
+const GraphNewsContainer = () => {
   return (
     <div id={styles["home-updates"]}>
       <Graph />
@@ -11,4 +11,4 @@ const BottomLeft = () => {
   );
 };
 
-export default BottomLeft;
+export default GraphNewsContainer;

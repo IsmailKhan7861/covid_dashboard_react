@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Ratio.module.css";
-import { percentage } from "../Left/TopLeft";
+import { percentage } from "../CovidData/WorldData";
+
 const Ratio = () => {
   return (
     <div id={styles.ratio}>

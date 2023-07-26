@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./RightContainer.module.css";
+import styles from "./RatioTwitterContainer.module.css";
 import Ratio from "./Ratio";
 import Twitter from "./Twitter";
-const RightContainer = () => {
+const RatioTwitterContainer = () => {
   return (
     <div id={styles.right}>
       <Ratio />
@@ -11,4 +11,4 @@ const RightContainer = () => {
   );
 };
 
-export default RightContainer;
+export default RatioTwitterContainer;

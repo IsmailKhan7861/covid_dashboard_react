@@ -1,17 +1,17 @@
 import React from "react";
-import Header from "./components/Header/Header";
 import styles from "./App.module.css";
 import { Fragment } from "react";
-import LeftContainer from "./components/Left/LeftContainer.jsx";
-import RightContainer from "./components/Right/RightContainer.jsx";
+import Header from "./components/Header/Header";
+import CovidData from "./components/CovidData/CovidData.jsx";
+import RatioTwitterContainer from "./components/Tweeter/RatioTwitterContainer.jsx";
 
 const App = () => {
   return (
     <Fragment>
       <Header></Header>
       <div id={styles.container}>
-        <LeftContainer />
-        <RightContainer />
+        <CovidData />
+        <RatioTwitterContainer />
       </div>
     </Fragment>
   );

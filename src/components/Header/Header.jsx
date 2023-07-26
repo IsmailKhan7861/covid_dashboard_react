@@ -1,7 +1,7 @@
 import React from "react";
+import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVirusCovid } from "@fortawesome/free-solid-svg-icons";
-import styles from "./Header.module.css";
 
 const Header = () => {
   return (
