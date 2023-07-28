@@ -1,0 +1,43 @@
+.affected-areas {
+  flex-basis: 60%;
+  background-color: #ffffff;
+  height: 500px;
+  border-radius: 7px;
+}
+.affected-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.type-affected {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.most-affected,
+.less-affected {
+  height: 15px;
+  width: 15px;
+  border-radius: 2px;
+}
+
+.most-affected {
+  background-color: #ec2222;
+}
+
+.less-affected {
+  background-color: #e3a3b9;
+}
+
+h2 {
+  color: #808080;
+}
+.map {
+  height: 420px;
+  width: 500px;
+  padding: 20px;
+  border-radius: 50px;
+}

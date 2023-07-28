@@ -1,33 +1,24 @@
 /* container left home-updates trends  */
-#trends {
-  background-color: #ffffff;
+.trends {
   flex-basis: 50%;
-  border-radius: 7px;
   height: 300px;
 }
 
 /* container left home-updates trends header  */
-#trends-header {
+.trends-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 4px 5px 10px;
 }
+
 .buttons {
   display: flex;
   font-size: 1.3rem;
   padding: 10px;
   gap: 7px;
 }
-#confirmed,
-#recovered,
-#deceased {
-  padding: 5px;
-}
 
-#confirmed:hover,
-#recovered:hover,
-#deceased:hover,
 .active {
   background-color: #808080;
   color: #ffffff;

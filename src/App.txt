@@ -1,0 +1,20 @@
+import React from "react";
+import styles from "./App.module.css";
+import { Fragment } from "react";
+import Header from "./components/Header/Header";
+import CovidData from "./components/CovidData/CovidData.jsx";
+import RatioTweets from "./components/Twitter/RatioTweets.jsx";
+
+const App = () => {
+  return (
+    <Fragment>
+      <Header />
+      <div id={styles.container}>
+        <CovidData />
+        <RatioTweets />
+      </div>
+    </Fragment>
+  );
+};
+
+export default App;

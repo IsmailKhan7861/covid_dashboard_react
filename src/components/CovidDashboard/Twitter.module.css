@@ -1,14 +1,11 @@
-#tweeter {
+.tweeter {
   padding: 20px;
-  background-color: #ffffff;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(20, 37, 64, 0.1);
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 710px;
+  height: 560px;
   width: 350px;
   margin-bottom: 10px;
   scrollbar-gutter: auto;
@@ -22,6 +19,11 @@
 }
 #thead {
   font-size: 2rem;
+}
+.empty-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .isLoading {
   display: flex;

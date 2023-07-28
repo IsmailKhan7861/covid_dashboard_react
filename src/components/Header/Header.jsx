@@ -5,14 +5,14 @@ import { faVirusCovid } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
-    <div id={styles.navbar}>
+    <div className={styles.navbar}>
       <FontAwesomeIcon
         icon={faVirusCovid}
         beat
         size="2xl"
         style={{ color: "#f80d3c" }}
       />
-      <h1 id={styles.heading}>COVID-19</h1>
+      <h1 className={styles.heading}>COVID-19</h1>
     </div>
   );
 };

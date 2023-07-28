@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  background-color: #e3dfde;
+  gap: 10px;
+}
+.left {
+  flex-basis: 70%;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.right {
+  flex-basis: 30%;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.home-updates {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.home-country {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
