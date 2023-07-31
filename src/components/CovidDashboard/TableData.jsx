@@ -8,9 +8,9 @@ const TableData = ({ data, header }) => {
       <Card
         className={`${styles["country-states"]}  ${styles["table-loader"]}`}
       >
-        <table className={styles.table}>
+        <div className={styles.table}>
           <p className={styles.loader}></p>
-        </table>
+        </div>
       </Card>
     );
   }
@@ -21,21 +21,13 @@ const TableData = ({ data, header }) => {
         <tbody>
           <tr className={styles["tr-1"]}>
             {header.map((elem) => (
-              <th
-                className={styles["table-style"]}
-                key={Math.random().toString()}
-              >
-                {elem}
-              </th>
+              <th className={styles["table-style"]}>{elem}</th>
             ))}
           </tr>
           {data.map((elem) => (
-            <tr className={styles["table-row"]} key={Math.random().toString()}>
+            <tr className={styles["table-row"]}>
               {Object.values(elem).map((value) => (
-                <td
-                  className={`${styles["table-row"]} ${styles["td-left"]}`}
-                  key={Math.random().toString()}
-                >
+                <td className={`${styles["table-row"]} ${styles["td-left"]}`}>
                   {value}
                 </td>
               ))}

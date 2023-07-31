@@ -15,7 +15,10 @@ const WorldData = () => {
     return (
       <div className={styles["live-data"]}>
         {data.worldData.map(() => (
-          <Card className={`${styles["loader-box"]} ${styles.box}`}>
+          <Card
+            className={`${styles["loader-box"]} ${styles.box}`}
+            key={Math.random().toString()}
+          >
             {<p className={styles.loader}></p>}
           </Card>
         ))}

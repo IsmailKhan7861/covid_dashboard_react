@@ -10,7 +10,7 @@ const CovidTable = () => {
   const data = useSelector((state) => state.table);
   return (
     <TableData
-      data={data.users || []}
+      data={data.tableRecords || []}
       header={Object.keys(data.tableRecords[0] || [])}
     />
   );

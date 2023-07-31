@@ -5,48 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Card from "../shared-component/Card";
+import { results } from "./twitter-api";
 let loadedData = [];
 const Twitter = () => {
   const [twitterData, setTwitterData] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      const url =
-        "https://twitter32.p.rapidapi.com/getSearch?hashtag=corona&lang=en";
-      const options = {
-        method: "GET",
-        headers: {
-          "X-RapidAPI-Key":
-            "f8da45c009msh74293eeec542a1fp1e067ajsn208f5584d4eb",
-          "X-RapidAPI-Host": "twitter32.p.rapidapi.com",
-        },
-      };
+  useEffect(
+    () => {
+      loadedData = results.map((elem) => {
+        return {
+          ...elem,
+          username: elem.username,
+          text: elem.text,
+          likes: elem.likes,
+          shares: elem.shares,
+        };
+      });
 
-      try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-      } catch (error) {
-        console.error(error);
-      }
-
-      const data = await fetch(url, options);
-      try {
-        const jsonData = await data.json();
-
-        loadedData = jsonData.results.map((elem) => {
-          return {
-            ...elem,
-            username: elem.user.username,
-            text: elem.text,
-            likes: elem.favorite_count,
-            shares: elem.retweet_count,
-          };
-        });
-
-        setTwitterData(loadedData);
-      } catch (err) {}
-    }
-    fetchData();
-  }, []);
+      setTwitterData(loadedData);
+    },
+    // fetchData();
+    []
+  );
   if (twitterData.length === 0) {
     return (
       <Card className={`${styles.tweeter} ${styles["empty-data"]}`}>
