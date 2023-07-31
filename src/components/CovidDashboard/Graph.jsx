@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import Card from "../shared-component/Card";
 import Button from "../shared-component/Button";
-//Graph Component
+
 const Graph = ({ data = [] }) => {
   //Set data
   const [graphData, setGraphData] = useState([]);
@@ -17,7 +17,6 @@ const Graph = ({ data = [] }) => {
     setGraphData(data);
     setCurrentIndex(0);
   }, [data]);
-  console.log(data);
   const sharedEventHandler = (identidfier) => {
     if (identidfier === "confirmed") {
       setGraphMode("confirmed");

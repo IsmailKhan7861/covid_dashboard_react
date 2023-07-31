@@ -1,31 +1,18 @@
 import styles from "./News.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRef } from "react";
 import Card from "../shared-component/Card";
-let loadedData = [];
-const News = ({ data = [] }) => {
-  const [newsData, setNewsData] = useState([]);
+import { useDispatch, useSelector } from "react-redux";
+import { getNewsData } from "../../store/createNewsSlice";
+
+const News = () => {
   const slideContainer = useRef();
   const newsContainer = useRef();
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    async function fetchData() {
-      try {
-        loadedData = data.articles.map((elem) => {
-          return {
-            ...elem,
-            title: elem.title,
-            summary: elem.summary,
-            links: elem.link,
-            img: elem.media,
-          };
-        });
-        setNewsData(loadedData);
-      } catch (err) {}
-    }
-
-    fetchData();
-  }, [data]);
+    dispatch(getNewsData());
+  }, []);
+  const data = useSelector((state) => state.news);
 
   //For Button
   const nextButton = () => {
@@ -37,7 +24,7 @@ const News = ({ data = [] }) => {
     slideContainer.current.scrollLeft -= slideWidth;
   };
 
-  if (data.length === 0) {
+  if (data.newsContent.length === 0) {
     return (
       <Card className={styles.news}>
         <h1 className={styles["news-header"]}>NEWS</h1>
@@ -64,7 +51,7 @@ const News = ({ data = [] }) => {
           >
             &#8250;
           </button>
-          {newsData.map((elem) => (
+          {data.newsContent.map((elem) => (
             <div
               className={`${styles.slides} ${styles["news-container"]}`}
               ref={newsContainer}

@@ -1,58 +1,20 @@
 import styles from "./WorldData.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Card from "../shared-component/Card";
+import { useDispatch, useSelector } from "react-redux";
+import { getWorldData } from "../../store/createWorldSlice";
 
-import arrowDown from "../../assets/arrow-red.png";
-import arrowUp from "../../assets/arrow-green.png";
-import totalCases from "../../assets/img1.png";
-import totalRecoverd from "../../assets/img2.png";
-import totalActive from "../../assets/img3.png";
-import totalDeaths from "../../assets/img4.png";
-
-let loadedData = [
-  {
-    id: "cases",
-    image: totalCases,
-    title: "Total Cases",
-    arrowImage: arrowDown,
-  },
-  {
-    id: "recovered",
-    image: totalRecoverd,
-    title: "Total Recovered",
-    arrowImage: arrowUp,
-  },
-  {
-    id: "active",
-    image: totalActive,
-    title: "Total Active",
-    arrowImage: arrowDown,
-  },
-  {
-    id: "deaths",
-    image: totalDeaths,
-    title: "Total Deaths",
-    arrowImage: arrowDown,
-  },
-];
-
-const WorldData = ({ data = [] }) => {
-  const [countData, setCountData] = useState([]);
+const WorldData = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
-    loadedData = loadedData.map((elem) => {
-      const id1 = data[elem.id];
-      return {
-        ...elem,
-        data: id1,
-      };
-    });
-    setCountData(loadedData);
-  }, [data]);
+    dispatch(getWorldData());
+  }, []);
+  const data = useSelector((state) => state.world);
 
-  if (data.length === 0) {
+  if (data.isLoading) {
     return (
       <div className={styles["live-data"]}>
-        {countData.map(() => (
+        {data.worldData.map(() => (
           <Card className={`${styles["loader-box"]} ${styles.box}`}>
             {<p className={styles.loader}></p>}
           </Card>
@@ -60,11 +22,10 @@ const WorldData = ({ data = [] }) => {
       </div>
     );
   }
-
   return (
     <div className={styles["live-data"]}>
-      {countData.map((elem) => (
-        <Card className={styles.box}>
+      {data.worldData.map((elem) => (
+        <Card className={styles.box} key={Math.random().toString()}>
           <div>
             <div className={styles.cases}>
               <p>{elem.title}</p>
@@ -79,5 +40,4 @@ const WorldData = ({ data = [] }) => {
     </div>
   );
 };
-
 export default WorldData;
